@@ -1,0 +1,52 @@
+---
+import TwitchLogo from "@/icons/TwitchLogo.astro"
+import Twitch from "@/icons/Twitch.astro"
+---
+
+
+<section class="mt-32 flex font-medium gap-y-10 flex-col" >
+    <div class="flex justify-center items-center">
+        <a  href="https://www.twitch.tv/the_fiends_ow"
+            target="_blank" 
+            class="hover:opacity-70  transition inline-block hover:scale-125 "
+            rel="noopener">
+        
+            <Twitch title="Twitch" className="w-16 h-16"/>
+        </a>
+        
+    </div>
+
+<!--mobile first luego pc  -->
+    <div class="grid uppercase text-center gap-x-8  [grid-template-columns:1fr] md:[grid-template-columns:1fr_1.5fr_1fr]">
+
+        <article class=" md:flex-grow order-2 md:order-none flex justify-center items-center text-xl md:py-12 lg:py-20 py-10  border-y-2  border-white " >
+            <h5>Scrims internas/externas, Casteos, Dinamicas </h5>
+        </article>
+
+
+        <article class=" order-1  md:order-none flex justify-center items-center text-2xl md:py-12 lg:py-20 py-10  md:border-y-2  border-white ">
+            <h4>
+                <a  href="https://www.twitch.tv/the_fiends_ow"
+                target="_blank" 
+                class="hover:text-purple-800 transition hover:scale-110 inline-block"
+                rel="noopener">
+                Síguelos en directo twitch.tv/the_fiends_ow
+           
+        </a>
+        
+            </h4>
+        </article>
+
+
+        <article class=" order-3 md:order-none flex justify-center items-center text-xl md:py-12 lg:py-20 py-10  md:border-y-2 border-b-2  border-white ">
+            <h5>Con la presencia de los miembros de la comunidad </h5>
+        </article>
+        
+
+    </div>
+</section>
+
+
+<style>
+
+</style>
