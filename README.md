@@ -1,7 +1,9 @@
+# La página web de THE FIENDS 
+
 # Astro Starter Kit: Basics
 
 ```sh
-npm create astro@latest -- --template basics
+pnpm create astro@latest -- --template basics
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)

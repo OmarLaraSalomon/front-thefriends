@@ -12,6 +12,10 @@
         "src/icons/*"
       ],
 
+      "@/imgs": [
+        "src/imgs/*"
+      ],
+
       "@/sections": [
         "src/sections/*"
       ],

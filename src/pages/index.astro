@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '@/sections/Header.astro';
-import Footer from '@/sections/Footer.astro';
 import Info from '@/sections/Info.astro';
 import Principal from '@/sections/Principal.astro';
 import Hero from '@/sections/Hero.astro';
@@ -9,10 +7,21 @@ import Down from '@/sections/Down.astro';
 ---
 
 <!--para instalar animaciones de midu pnpm add @midudev/tailwind-animations no me deja usar spin por eso -->
-<Layout title="THE-FRIENDS">
-<Hero/>
+<Layout
+  title="THE FIENDS | ESPORTS "
+  description="Descubre a una de las futuras promesas de Latinoamerica en el mundo de los esports Ven y conoce la innovación y talento de THE FIENDS con sus roaster de Overwatch"
+  >	
+	
+
+		
+		
+		<Hero/>
+
+	
+
 	
 	<main>
+
 		<Principal/>
 
 		<Info/>
@@ -20,7 +29,7 @@ import Down from '@/sections/Down.astro';
 		<Down/>
 
 	</main>
-	<Footer/>
+	
 </Layout>
 
 <style>

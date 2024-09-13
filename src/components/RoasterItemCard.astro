@@ -1,0 +1,62 @@
+---
+import type {Roaster} from "@/lib/data"
+//la interfaz de las props es que le tiene que llegar una prop roaster que es de tipo Roast
+
+
+interface Props{
+    roaster: Roaster;
+}
+
+const {roaster}= Astro.props
+
+//hacemos una destructuracion 
+
+const {id,roastId,roastNombre,color,imagen,capitanes} = roaster
+
+const captainsString= capitanes.join(", ")
+
+---
+
+<!--para que Astro maneje correctamente las rutas dinámicas, 
+los archivos que representan rutas deben estar dentro de src/pages/
+src/pages/Roasters/ para que Astro pueda generar las rutas dinámicas.
+//COLOCAR en el astro.config   output:'server'
+-->
+
+
+
+
+<a 
+href=  { ` /Roasters/${id} ` }  
+class=" roaster-item  transition-all duration-300  flex relative p-2 overflow-hidden items-center
+    gap-2 pb-6 rounded-md hover:bg-zinc-800 shadow-lg hover:shadow-xl w-20 md:w-44 flex-col
+    hover:scale-105"
+    transition:name=`Roaster ${id} box` 
+    >
+</div>
+<!--tenemos que poner la trnasicion en el mismo sitio donde le damo clic, que es aqui -->
+    <picture class="aspect-square w-full h-auto flex-none  ">
+        <img 
+        src={imagen} 
+        alt= { `Imagen de ${roastNombre} by ${captainsString} ` }
+        class="object-cover w-full h-full rounded-md "
+        title={roastNombre}
+        loading="lazy"
+        transition:name=`Roaster ${id} image`
+
+        >
+ <!--a la imagen hay que hacer un nexo, por eso la transicion que identifique la imagen -->       
+ <!--esa imagen se va a transicionar a la sihguiente pagina  -->       
+    </picture>
+    <div class="flex flex-auto flex-col  truncate justify-center items-center">
+        <h4 class="text-sm" transition:name=`Roaster ${roaster?.id} title`>
+            {roastNombre}
+        </h4>
+        <span class="text-xs flex justify-center items-center" transition:name=`Roaster ${roaster?.id} capitanes`>
+            {captainsString}
+        </span>
+    </div>
+</a>
+
+
+

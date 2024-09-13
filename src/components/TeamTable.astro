@@ -1,0 +1,56 @@
+---
+import Overwatch from "@/icons/Overwatch.astro";
+import { type Players } from "@/lib/data";
+import type {Roaster} from "@/lib/data"
+
+
+
+interface Props{
+    players: Players[]
+
+}
+const {players}= Astro.props
+
+---
+
+<table class="table-auto text-left min-w-full divide-y-2 divide-gray-500/50">
+    <thead class=" ">
+        <tr class="  text-red-800 font-semibold ">
+            <th class="px-4 py-2">#</th>
+            <th class="px-4 py-2">Nombre</th>
+            <th class="px-4 py-2">Roaster</th>
+            <th class="px-4 py-2"><Overwatch title="Overwatch-logo" className="w-8 h-8"/></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr class="h-[20px]"></tr>
+        {
+            players.map((player, index) =>(
+                <tr class="text-sm font-light hover:bg-white/10 border-separate border-spacing-0 
+                    overflow-hidden transition duration-300">
+                    <td class="px-4 py-2 rounded-tl-lg rounded-bl-lg w-5">{index + 1} </td>
+                    <td class="px-4 py-2 flex gap-3">
+                        <picture class=""> 
+                            <img 
+                                src={player.imagen} 
+                                alt={player.nombre} 
+                                class="w-11  h-11 rounded-lg  "
+                            />
+                        </picture>
+                        <div class="flex flex-col">
+                            <h3 class="text-base font-normal">{player.nombre}</h3>
+                        </div>
+                    </td>
+
+                <td class="px-4 py-2">{player.roast}</td>
+                <td class="px-4 py-2 rounded-tr-lg rounded-br-lg">{player.rol}</td>
+
+          </tr>  
+        ))}
+    </tbody>
+
+
+
+</table>
+

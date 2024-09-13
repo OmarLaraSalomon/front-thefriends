@@ -1,0 +1,122 @@
+---
+
+import Overwatch from "@/icons/Overwatch.astro"
+
+
+//Astro.url contiene info sobre la URL actual de la página, como el pathname
+
+
+//obtenemos el path
+const { pathname } = Astro.url
+
+
+//Ternario para ver si el path es mayor a 1 para que no sea la raíz y no remueva el /
+
+//pathname.endsWith("/"): Verifica si el pathname termina con un / (barra diagonal).
+
+//el slice va a quitar  el último carácter del path /
+
+const normalizedPathName =
+	pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname
+
+
+	const pages = [
+	{ name: "Inicio", href: "/" },
+	//si el normalizedPathName comienza con /roasters, marcará esta página como activa.
+	{ name: "Roasters", href: "/Roasters", active: normalizedPathName.startsWith("/Roasters") },
+	{ name: "Alianzas", href: "/Alianzas" }, //estan con mayusculas por el nombre de las paginas.astro
+	{ name: "Quienes Somos", href: "/Quienes" },
+	{
+	//	name: "",
+		//href: "",
+		//target: "_blank",
+	},
+
+// iterar sobre cada página del array y clonar ese nuevo array con esas props 
+
+].map((page) => ({
+	...page,
+//Si page.active ya está definido (como en el caso de la página "Roasters"), se mantiene ese valor. 
+//si nSe verifica si el normalizedPathName es exactamente igual al href de la página. 
+//Si es así, significa que esta es la página actual y se marcará como activa.
+	active: page.active ?? normalizedPathName === page.href,
+}))
+
+//evalúa como true si el normalizedPathName comienza con /roasters/. 
+//determinar si la URL actual pertenece a una sección más profunda 
+
+const isRoasterIntern = normalizedPathName.startsWith("/Roasters/")//"Roasters" ( /roasters/r12).
+
+
+/*
+
+Ejemplo:
+Si la URL actual es /roasters/r1:
+normalizedPathName sería /roasters/r12.
+La propiedad active para "Roasters" será true porque normalizedPathName.startsWith("/roasters").
+isRoasterIntern será true porque la URL también comienza con /roasters/.
+
+*/
+
+---
+
+
+
+
+
+
+
+<header class="mb-10 h-16 max-w-[100vw] ">
+	<nav class="group flex h-full w-full items-center justify-between md:px-10 md:justify-center lg:justify-center">
+		{
+			pages.map(({ name, href, active }, key) => (
+				<>
+					<a
+						href={href}
+						class:list={[
+							
+							"nav-item relative px-4 h-full select-none flex flex-col items-center justify-center gap-1 text-center  md:text-xl  uppercase  lg:px-7 xl:px-10  hover:text-red-700 hover:drop-shadow-[1px_0px_10px_var(--tw-shadow-color)] shadow-white",
+							
+							{ "current-page ": active },
+							{ "text-red-700": !active },
+						]}
+						id={`nav-link-${key}`}
+					>
+						<span class="z-10">{name}</span>
+						<div class="background relative -z-10  h-full w-full" />
+					</a>
+					{key === 1 && <div class:list={"mx-1 md:mx-32"} />}
+				</>
+			))
+		}
+		
+
+			
+			
+	</nav>
+
+
+<div class="flex items-center justify-center  relative">
+
+    
+    <div class="border-t border-2 border-gray-400 flex-grow  mb-32 "></div>
+        <div class=" text-gray-800  ">
+                
+                <Overwatch className="w-[50px] md:w-[100px] relative  bottom-16  h-auto animate-fade-in-up m-1 hover:drop-shadow-[1px_0px_10px_var(--tw-shadow-color)] shadow-white transition duration-500 ease-in-out" title="Overwatch "/>  
+            
+        </div>
+    <div class="border-t border-2 border-gray-400 flex-grow mb-32 "></div>
+
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+

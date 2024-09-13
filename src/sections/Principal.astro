@@ -2,11 +2,12 @@
 import Badge from "@/components/Badge.astro"
 ---
 
-<section class="mt-5 mx-auto animate-fade-in animate-delay-500  flex  flex-col justify-center items-center text-center ">
+<section class="mt-5 mx-auto  flex  flex-col justify-center items-center text-center ">
 
-    <p class="mt-5 text-center font-semibold ">Somos la plaga que se extiende a través de sus victorias y se fortalece con las derrotas. </p>
+    <p class="mt-5 text-center text-3xl md:text-5xl font-semibold ">La plaga que se extiende a través de sus victorias 
+        y se fortalece con las derrotas. </p>
 
-    <span class="flex justify-center my-3 font-medium text-red-900">
+    <span class="flex justify-center text-2xl md:text-4xl my-5 font-bold text-red-900">
 
         ¡Somos los demonios de pico largo!
     </span>
@@ -23,9 +24,78 @@ import Badge from "@/components/Badge.astro"
             <Badge >Unete y se parte de esta comunidad </Badge>
         </a>
     </div>
-        
+    
+        <div class="mt-24 relative flex  justify-center items-center ">
+                <div class="luz  absolute   size-[250px]  top-24    md:top-24  md:-left-2 inset-0 -z-0 md:size-[350px] rounded-full bg-white blur-3xl opacity-90 ">
+                </div>
+            <img class=" object-cover rounded-xl transition duration-500 hover:scale-105 w-72 h-[400px] md:w-[330px] md:h-[530px] " src="../src/imgs/daygame.png" alt="" loading="lazy">
+
+        </div>
     
     
 
 
 </section>
+
+
+<style>
+
+
+
+
+
+
+section span,p{
+
+/*both para que funcione por abos lados, cuando temrine que s quede con el estado final */
+animation: reveal linear both;
+animation-timeline: view(); /*solo cuando esta visible el elemento */
+/*si usamos el scroll todas las imagenes vana tener la opacidad, no una por una como se muestran */
+
+animation-range: entry 20%  cover 30% ; /*para que se cea compleamente al 100%*/
+/*cuando haya entrado un 20% de la imagen  y el final es cuando ya cubra el 30%*/
+}
+
+
+section img{
+
+/*both para que funcione por abos lados, cuando temrine que s quede con el estado final */
+animation: reveal linear both;
+animation-timeline: view(); /*solo cuando esta visible el elemento */
+/*si usamos el scroll todas las imagenes vana tener la opacidad, no una por una como se muestran */
+
+animation-range: entry 20%  cover 30% ; /*para que se cea compleamente al 100%*/
+/*cuando haya entrado un 20% de la imagen  y el final es cuando ya cubra el 30%*/
+}
+
+section .luz{
+
+/*both para que funcione por abos lados, cuando temrine que s quede con el estado final */
+animation: reveal linear both;
+animation-timeline: view(); /*solo cuando esta visible el elemento */
+/*si usamos el scroll todas las imagenes vana tener la opacidad, no una por una como se muestran */
+
+animation-range: entry 20%  cover 30% ; /*para que se cea compleamente al 100%*/
+/*cuando haya entrado un 20% de la imagen  y el final es cuando ya cubra el 30%*/
+}
+
+
+@keyframes reveal{
+
+from{ /*no quermeos que se vea de inicio la imagen*/
+opacity: 0;
+/*para que se mueva opara arriba */
+translate: 0  100px;
+
+/*para hacerle como un zoom in*/
+scale: .5;
+} 
+
+    to{
+opacity: 1;
+translate: 0  0; /*x y */
+/*para hacerle como un zoom in*/
+scale: 1;
+    }
+}
+</style>

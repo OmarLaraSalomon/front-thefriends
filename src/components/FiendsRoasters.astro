@@ -1,0 +1,15 @@
+---
+import RoasterItemCard from "@/components/RoasterItemCard.astro"
+
+
+import {roasters} from "@/lib/data"
+---
+<!--el wrap es para los flex y se dividen en varias líneas -->
+<div class="revelacion  flex flex-wrap mt-6 gap-12 px-12 md:px-0">
+    {
+        roasters.map( roaster => <RoasterItemCard roaster ={roaster}/>)
+    }
+</div>
+
+
+

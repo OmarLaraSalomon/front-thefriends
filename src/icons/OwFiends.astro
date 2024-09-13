@@ -1,0 +1,30 @@
+---
+
+
+interface Props {
+    title: string;
+    className?: string;
+}
+
+const { title,  className  } = Astro.props;
+
+
+
+---
+
+
+<svg 
+{...Astro.props} 
+
+class={className}
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    fill="#ffff" 
+    role="img" 
+    viewBox="0,0,256,256"
+    fill-rule="nonzero"
+    xmlns="http://www.w3.org/2000/svg">
+    <title>{title}</title>
+    <defs><linearGradient x1="31.706" y1="6" x2="31.706" y2="17.548" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#000000"></stop><stop offset="1" stop-color="#d30a0a"></stop></linearGradient><linearGradient x1="32" y1="12.915" x2="32" y2="58" gradientUnits="userSpaceOnUse" id="color-2"><stop offset="0" stop-color="#050505"></stop><stop offset="1" stop-color="#685050"></stop></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M20.982,17.548c3.062,-2.34 6.875,-3.748 11.018,-3.748c3.96,0 7.617,1.286 10.607,3.44l4.993,-5.99c-4.352,-3.281 -9.744,-5.25 -15.6,-5.25c-6.119,0 -11.742,2.139 -16.188,5.689z" fill="url(#color-1)"></path><path d="M49.597,12.915l-4.991,5.988c3.441,3.313 5.594,7.954 5.594,13.097c0,3.359 -0.93,6.497 -2.523,9.2l-10.702,-10.5l-3.975,-10.4v16.9l9.685,9.502c-3.005,2.19 -6.691,3.498 -10.685,3.498c-3.994,0 -7.68,-1.308 -10.685,-3.498l9.685,-9.502v-16.9l-3.975,10.4l-10.702,10.5c-1.593,-2.703 -2.523,-5.841 -2.523,-9.2c0,-4.958 1.998,-9.455 5.225,-12.74l-5.164,-5.853c-4.841,4.726 -7.861,11.309 -7.861,18.593c0,14.336 11.664,26 26,26c14.336,0 26,-11.664 26,-26c0,-7.547 -3.251,-14.331 -8.403,-19.085zM35,31.135l0.107,0.279l0.156,0.408l0.312,0.306l10.469,10.272l-2.444,2.398l-8.6,-8.438zM28.426,32.128l0.312,-0.306l0.156,-0.408l0.106,-0.279v5.226l-8.6,8.438l-2.444,-2.399zM32,56c-13.234,0 -24,-10.766 -24,-24c0,-5.795 2.05,-11.268 5.812,-15.625l2.537,2.875c-2.946,3.6 -4.549,8.062 -4.549,12.75c0,11.138 9.062,20.2 20.2,20.2c11.138,0 20.2,-9.062 20.2,-20.2c0,-4.897 -1.734,-9.512 -4.919,-13.183l2.446,-2.935c4.009,4.407 6.273,10.173 6.273,16.118c0,13.234 -10.766,24 -24,24z" fill="url(#color-2)"></path></g></g></svg>
+
+
+

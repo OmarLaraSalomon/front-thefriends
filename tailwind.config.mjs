@@ -9,5 +9,5 @@ export default {
 			
 		},
 	},
-	plugins: [animations],
+	//plugins: [animations],
 }
